@@ -21,7 +21,7 @@ class HeadHunterAPI(Parser):
     def __init__(self):
         self.__url = 'https://api.hh.ru/vacancies'
         self.__headers = {'User-Agent': 'HH-User-Agent'}
-        self.__params = {'text': '', 'page': 0, 'per_page': 10, 'area': 113}
+        self.__params = {'text': '', 'page': 0, 'per_page': 100, 'area': 113}
         self.vacancies = []
 
     def load_vacancies(self, keyword):
