@@ -32,8 +32,11 @@ class JSONSaver(Save):
         """
         with open('/home/atshnik/PycharmProjects/Course_Work_4/pythonProject/data/vacancies.json', 'r') as f:
             data = json.load(f)
-            for i in data:
-                print(i['name'])
+            if type(data) is dict:
+                print(data['name'])
+            else:
+                for i in data:
+                    print(i['name'])
 
     def delete_vacancy(self):
         """
