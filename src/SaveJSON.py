@@ -37,7 +37,7 @@ class JSONSaver(Save):
             else:
                 for i in data:
                     print(i['name'])
-
+                    
     def delete_vacancy(self):
         """
         Удаляет данные о вакансиях
