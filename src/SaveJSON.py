@@ -23,21 +23,26 @@ class JSONSaver(Save):
         """
         Записывает список вакансий в JSON файл
         """
-        with open('../data/vacancies.json', 'w', encoding="utf-8") as f:
-            json.dump(vacancy, f, ensure_ascii=False)
+        with open('/home/atshnik/PycharmProjects/Course_Work_4/pythonProject/data/vacancies.json', 'w', encoding="utf-8") as f:
+            f.write(json.dumps(vacancy, default=lambda x: x.__dict__, ensure_ascii=False))
 
     def get_data(self):
         """
         Выводит данные о названиях вакансий из файла JSON
         """
-        with open('../data/vacancies.json', 'r') as f:
+        with open('/home/atshnik/PycharmProjects/Course_Work_4/pythonProject/data/vacancies.json', 'r') as f:
             data = json.load(f)
-            for i in data:
-                print(i['name'])
+            if type(data) is dict:
+                print(data['name'])
+            else:
+                for i in data:
+                    print(i['name'])
+
+
 
     def delete_vacancy(self):
         """
         Удаляет данные о вакансиях
         """
-        with open('../data/vacancies.json', 'w') as f:
+        with open('/home/atshnik/PycharmProjects/Course_Work_4/pythonProject/data/vacancies.json', 'w') as f:
             f.write('')

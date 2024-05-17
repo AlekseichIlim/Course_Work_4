@@ -1,5 +1,6 @@
 from src.HH_API import HeadHunterAPI
 from src.Vacancies import Vacancy
+from src.SaveJSON import JSONSaver
 
 
 def filter_vacancies(vacancies_list, words):
@@ -76,6 +77,9 @@ def user_interaction():
     ranged_vacancies = get_vacancies_by_salary(filtered_vacancies, salary_range)
     sorted_vacancies = sort_vacancies(ranged_vacancies)
     top_vacancies = get_top_vacancies(sorted_vacancies, top_n)
+
+    json_saver = JSONSaver()
+    json_saver.add_vacancy(top_vacancies)
 
     if top_n > len(sorted_vacancies):
         print(f'\nПо вашему запросу нашлось только {len(sorted_vacancies)} вакансий')
