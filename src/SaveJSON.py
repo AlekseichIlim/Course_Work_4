@@ -30,7 +30,7 @@ class JSONSaver(Save):
         """
         Выводит данные о названиях вакансий из файла JSON
         """
-        with open('/home/atshnik/PycharmProjects/Course_Work_4/pythonProject/data/vacancies.json', 'r') as f:
+        with open('../data/vacancies.json', 'r') as f:
             data = json.load(f)
             if type(data) is dict:
                 print(data['name'])
@@ -44,5 +44,5 @@ class JSONSaver(Save):
         """
         Удаляет данные о вакансиях
         """
-        with open('/home/atshnik/PycharmProjects/Course_Work_4/pythonProject/data/vacancies.json', 'w') as f:
+        with open('..data/vacancies.json', 'w') as f:
             f.write('')
