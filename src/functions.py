@@ -45,6 +45,7 @@ def get_top_vacancies(vacancies, count):
     """
     Оставляет необходимое количество вакансий
     """
+
     top_list = vacancies[:int(count)]
     return top_list
 
